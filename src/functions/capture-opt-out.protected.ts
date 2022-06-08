@@ -38,8 +38,8 @@ export const handler: ServerlessFunctionSignature<OptOutContext, InboundMessage>
   callback: ServerlessCallback,
 ) {
 
-  const response = new Twilio.Response()
-  response.setStatusCode(200)
+  // Response object
+  const response = new Twilio.twiml.MessagingResponse()
 
   if (optOutWords.has(event.Body.trim().toLowerCase())) {
     console.log('We\'ve got opt-out', event)
